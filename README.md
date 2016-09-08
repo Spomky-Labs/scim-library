@@ -42,7 +42,7 @@ The following components are implemented:
         * [ ] [Schema Representation](https://tools.ietf.org/html/rfc7643#section-8.7)
             * [ ] [Resource Schema Representation](https://tools.ietf.org/html/rfc7643#section-8.7.1)
             * [ ] [Service Provider Schema Representation](https://tools.ietf.org/html/rfc7643#section-8.72)
-* [ ] Protocol](https://tools.ietf.org/html/rfc7644)
+* [ ] [Protocol](https://tools.ietf.org/html/rfc7644)
     * [ ] [Authentication and Authorization](https://tools.ietf.org/html/rfc7644#section-2)
         * [ ] [Use of Tokens as Authorizations](https://tools.ietf.org/html/rfc7644#section-2.1)
         * [ ] [Anonymous Requests](https://tools.ietf.org/html/rfc7644#section-2.1)
