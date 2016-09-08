@@ -4,89 +4,78 @@ This project aims to provide components to build an Identity Manager based on th
 
 The following components are implemented:
 
-* [ ] Core Schema
-    * [ ] SCIM Schema:
-        * [ ] Attributes
-        * [ ] Attribute Characteristics
-        * [ ] Attribute Data Types
-            * [ ] String
-                * [ ] Boolean
-                * [ ] Decimal
-                * [ ] Integer
-                * [ ] DateTime
-                * [ ] Binary
-                * [ ] Reference
-                * [ ] Complex
-            * [ ] Multi-Valued Attributes
-            * [ ] Unassigned and Null Values
-    * [ ] SCIM Resources
-        * [ ] Common Attributes
-        * [ ] Defining New Resource Types
-        * [ ] Attribute Extensions to Resources
-    * [ ] SCIM Core Resources and Extensions
-        * [ ] "User" Resource Schema
-            * [ ] Singular Attributes
-            * [ ] Multi-Valued Attributes
-        * [ ] "Group" Resource Schema
-        * [ ] Enterprise User Schema Extension
-    * [ ] Service Provider Configuration Schema
-    * [ ] ResourceType Schema
-    * [ ] Schema Definition
-    * [ ] JSON Representation
-        * [ ] Minimal User Representation
-        * [ ] Full User Representation
-        * [ ] Enterprise User Extension Representation
-        * [ ] Group Representation
-        * [ ] Service Provider Configuration Representation
-        * [ ] Resource Type Representation
-        * [ ] Schema Representation
-            * [ ] Resource Schema Representation
-            * [ ] Service Provider Schema Representation
-* [ ] Protocol
-    * [ ] Authentication and Authorization
-        * [ ] se of Tokens as Authorizations
-        * [ ] Anonymous Requests
-    * [ ] SCIM Protocol
-        * [ ] Background
-        * [ ] SCIM Endpoints and HTTP Methods
-        * [ ] Creating Resources
-            * [ ] Resource Types
-        * [ ] Retrieving Resources
-            * [ ] Retrieving a Known Resource
-            * [ ] Query Resources
-            * [ ] Querying Resources Using HTTP POST
-        * [ ] Modifying Resources
-            * [ ] Replacing with PUT
-            * [ ] Modifying with PATCH
-        * [ ] Deleting Resources
-        * [ ] Bulk Operations
-            * [ ] Circular Reference Processing
-            * [ ] "bulkId" Temporary Identifiers
-            * [ ] Response and Error Handling
-            * [ ] Maximum Operations
-        * [ ] Data Input/Output Formats
-        * [ ] Additional Operation Response Parameters
-        * [ ] Attribute Notation
-        * [ ] "/Me" Authenticated Subject Alias
-        * [ ] HTTP Status and Error Response Handling
-        * [ ] SCIM Protocol Versioning
-        * [ ] Versioning Resources
-    * [ ] Service Provider Configuration Endpoints
-    * [ ] Preparation and Comparison of Internationalized Strings
-    * [ ] Multi-Tenancy
-        * [ ] Associating Clients to Tenants
-        * [ ] SCIM Identifiers with Multiple Tenants
-    * [ ] Security Considerations
-        * [ ] HTTP Considerations
-        * [ ] TLS Support Considerations
-        * [ ] Authorization Token Considerations
-        * [ ] Bearer Token and Cookie Considerations
-        * [ ] Privacy Considerations
-            * [ ] Personal Information
-            * [ ] Disclosure of Sensitive Information in URIs
-        * [ ] Anonymous Requests
-        * [ ] Secure Storage and Handling of Sensitive Data
-        * [ ] Case-Insensitive Comparison and International Languages
+* [ ] [Core Schema](https://tools.ietf.org/html/rfc7643)
+    * [ ] [SCIM Schema](https://tools.ietf.org/html/rfc7643#section-2)
+        * [ ] [Attributes](https://tools.ietf.org/html/rfc7643#section-2.1)
+        * [ ] [Attribute Characteristics](https://tools.ietf.org/html/rfc7643#section-2.2)
+        * [ ] [Attribute Data Types](https://tools.ietf.org/html/rfc7643#section-2.3)
+            * [ ] [String](https://tools.ietf.org/html/rfc7643#section-2.3.1)
+            * [ ] [Boolean](https://tools.ietf.org/html/rfc7643#section-2.3.2)
+            * [ ] [Decimal](https://tools.ietf.org/html/rfc7643#section-2.3.3)
+            * [ ] [Integer](https://tools.ietf.org/html/rfc7643#section-2.3.4)
+            * [ ] [DateTime](https://tools.ietf.org/html/rfc7643#section-2.3.5)
+            * [ ] [Binary](https://tools.ietf.org/html/rfc7643#section-2.3.6)
+            * [ ] [Reference](https://tools.ietf.org/html/rfc7643#section-2.3.7)
+            * [ ] [Complex](https://tools.ietf.org/html/rfc7643#section-2.3.8)
+        * [ ] [Multi-Valued Attributes](https://tools.ietf.org/html/rfc7643#section-2.4)
+        * [ ] [Unassigned and Null Values](https://tools.ietf.org/html/rfc7643#section-2.5)
+    * [ ] [SCIM Resources](https://tools.ietf.org/html/rfc7643#section-3)
+        * [ ] [Common Attributes](https://tools.ietf.org/html/rfc7643#section-3.1)
+        * [ ] [Defining New Resource Types](https://tools.ietf.org/html/rfc7643#section-3.2)
+        * [ ] [Attribute Extensions to Resources](https://tools.ietf.org/html/rfc7643#section-3.3)
+    * [ ] [SCIM Core Resources and Extensions](https://tools.ietf.org/html/rfc7643#section-4)
+        * [ ] ["User" Resource Schema](https://tools.ietf.org/html/rfc7643#section-4.1)
+            * [ ] [Singular Attributes](https://tools.ietf.org/html/rfc7643#section-4.1.1)
+            * [ ] [Multi-Valued Attributes](https://tools.ietf.org/html/rfc7643#section-4.1.2)
+        * [ ] ["Group" Resource Schema](https://tools.ietf.org/html/rfc7643#section-4.2)
+        * [ ] [Enterprise User Schema Extension](https://tools.ietf.org/html/rfc7643#section-4.3)
+    * [ ] [Service Provider Configuration Schema](https://tools.ietf.org/html/rfc7643#section-5)
+    * [ ] [ResourceType Schema](https://tools.ietf.org/html/rfc7643#section-6)
+    * [ ] [Schema Definition](https://tools.ietf.org/html/rfc7643#section-7)
+    * [ ] [JSON Representation](https://tools.ietf.org/html/rfc7643#section-8)
+        * [ ] [Minimal User Representation](https://tools.ietf.org/html/rfc7643#section-8.1)
+        * [ ] [Full User Representation](https://tools.ietf.org/html/rfc7643#section-8.2)
+        * [ ] [Enterprise User Extension Representation](https://tools.ietf.org/html/rfc7643#section-8.3)
+        * [ ] [Group Representation](https://tools.ietf.org/html/rfc7643#section-8.4)
+        * [ ] [Service Provider Configuration Representation](https://tools.ietf.org/html/rfc7643#section-8.5)
+        * [ ] [Resource Type Representation](https://tools.ietf.org/html/rfc7643#section-8.6)
+        * [ ] [Schema Representation](https://tools.ietf.org/html/rfc7643#section-8.7)
+            * [ ] [Resource Schema Representation](https://tools.ietf.org/html/rfc7643#section-8.7.1)
+            * [ ] [Service Provider Schema Representation](https://tools.ietf.org/html/rfc7643#section-8.72)
+* [ ] Protocol](https://tools.ietf.org/html/rfc7644)
+    * [ ] [Authentication and Authorization](https://tools.ietf.org/html/rfc7644#section-2)
+        * [ ] [Use of Tokens as Authorizations](https://tools.ietf.org/html/rfc7644#section-2.1)
+        * [ ] [Anonymous Requests](https://tools.ietf.org/html/rfc7644#section-2.1)
+    * [ ] [SCIM Protocol](https://tools.ietf.org/html/rfc7644#section-3)
+        * [ ] [Background](https://tools.ietf.org/html/rfc7644#section-3.1)
+        * [ ] [SCIM Endpoints and HTTP Methods](https://tools.ietf.org/html/rfc7644#section-3.2)
+        * [ ] [Creating Resources](https://tools.ietf.org/html/rfc7644#section-3.3)
+            * [ ] [Resource Types](https://tools.ietf.org/html/rfc7644#section-3.3.1)
+        * [ ] [Retrieving Resources](https://tools.ietf.org/html/rfc7644#section-3.4)
+            * [ ] [Retrieving a Known Resource](https://tools.ietf.org/html/rfc7644#section-3.4.1)
+            * [ ] [Query Resources](https://tools.ietf.org/html/rfc7644#section-3.4.2)
+            * [ ] [Querying Resources Using HTTP POST](https://tools.ietf.org/html/rfc7644#section-3.4.3)
+        * [ ] [Modifying Resources](https://tools.ietf.org/html/rfc7644#section-3.4)
+            * [ ] [Replacing with PUT](https://tools.ietf.org/html/rfc7644#section-3.5.1)
+            * [ ] [Modifying with PATCH](https://tools.ietf.org/html/rfc7644#section-3.5.2)
+        * [ ] [Deleting Resources](https://tools.ietf.org/html/rfc7644#section-3.6)
+        * [ ] [Bulk Operations](https://tools.ietf.org/html/rfc7644#section-3.7)
+            * [ ] [Circular Reference Processing](https://tools.ietf.org/html/rfc7644#section-3.7.1)
+            * [ ] ["bulkId" Temporary Identifiers](https://tools.ietf.org/html/rfc7644#section-3.7.2)
+            * [ ] [Response and Error Handling](https://tools.ietf.org/html/rfc7644#section-3.7.3)
+            * [ ] [Maximum Operations](https://tools.ietf.org/html/rfc7644#section-3.7.4)
+        * [ ] [Data Input/Output Formats](https://tools.ietf.org/html/rfc7644#section-3.8)
+        * [ ] [Additional Operation Response Parameters](https://tools.ietf.org/html/rfc7644#section-3.9)
+        * [ ] [Attribute Notation](https://tools.ietf.org/html/rfc7644#section-3.10)
+        * [ ] ["/Me" Authenticated Subject Alias](https://tools.ietf.org/html/rfc7644#section-3.11)
+        * [ ] [HTTP Status and Error Response Handling](https://tools.ietf.org/html/rfc7644#section-3.12)
+        * [ ] [SCIM Protocol Versioning](https://tools.ietf.org/html/rfc7644#section-3.13)
+        * [ ] [Versioning Resources](https://tools.ietf.org/html/rfc7644#section-3.14)
+    * [ ] [Service Provider Configuration Endpoints](https://tools.ietf.org/html/rfc7644#section-4)
+    * [ ] [Preparation and Comparison of Internationalized Strings](https://tools.ietf.org/html/rfc7644#section-5)
+    * [ ] [Multi-Tenancy](https://tools.ietf.org/html/rfc7644#section-6)
+        * [ ] [Associating Clients to Tenants](https://tools.ietf.org/html/rfc7644#section-6.1)
+        * [ ] [SCIM Identifiers with Multiple Tenants](https://tools.ietf.org/html/rfc7644#section-6.2)
 
 # The Release Process
 
