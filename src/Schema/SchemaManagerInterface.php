@@ -16,6 +16,16 @@ use Scim\Resource\ResourceInterface;
 interface SchemaManagerInterface
 {
     /**
+     * @param \Scim\Schema\SchemaInterface $schema
+     */
+    public function addSchema(SchemaInterface $schema);
+
+    /**
+     * @return \Scim\Schema\SchemaInterface[]
+     */
+    public function getSchemas();
+
+    /**
      * This method will verifies the resource is valid.
      * Internally the method will check all parameters against all schemas declared by the resource.
      *

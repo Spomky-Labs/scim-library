@@ -1,5 +1,28 @@
 # System for Cross-domain Identity Management (SCIM) Library for PHP
 
+[![Join the chat at https://gitter.im/Spomky-Labs/scim-library](https://badges.gitter.im/Spomky-Labs/scim-library.svg)](https://gitter.im/Spomky-Labs/scim-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Spomky-Labs/scim-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Spomky-Labs/scim-library/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Spomky-Labs/scim-library/badge.svg?branch=master)](https://coveralls.io/github/Spomky-Labs/scim-library?branch=master)
+[![PSR-7 ready](https://img.shields.io/badge/PSR--7-ready-brightgreen.svg)](http://www.php-fig.org/psr/psr-7/)
+
+[![Dependency Status](https://www.versioneye.com/user/projects/57acac64fc2569003af85833/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57acac64fc2569003af85833)
+
+[![Build Status](https://travis-ci.org/Spomky-Labs/scim-library.svg?branch=master)](https://travis-ci.org/Spomky-Labs/scim-library)
+[![HHVM Status](http://hhvm.h4cc.de/badge/spomky-labs/scim-library.svg)](http://hhvm.h4cc.de/package/spomky-labs/scim-library)
+[![PHP 7 ready](http://php7ready.timesplinter.ch/Spomky-Labs/scim-library/badge.svg)](https://travis-ci.org/Spomky-Labs/scim-library)
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/7a822517-4ee8-4b20-aeb9-9adde14d27a4/big.png)](https://insight.sensiolabs.com/projects/7a822517-4ee8-4b20-aeb9-9adde14d27a4)
+
+[![Latest Stable Version](https://poser.pugx.org/Spomky-Labs/scim-library/v/stable.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
+[![Total Downloads](https://poser.pugx.org/Spomky-Labs/scim-library/downloads.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
+[![Latest Unstable Version](https://poser.pugx.org/Spomky-Labs/scim-library/v/unstable.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
+[![License](https://poser.pugx.org/Spomky-Labs/scim-library/license.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
+
+> *Note 1: this library is still in development. The first stable release will be tagged as `v1.0.x`. All tags `v0.x.y` must be considered as unstable.*
+> 
+> *Note 2: if you use Symfony, [a bundle is in development](https://github.com/Spomky-Labs/OAuth2ServerBundle).*
+
 This project aims to provide components to build an Identity Manager based on the SCIM specifications ([RFC7643](https://tools.ietf.org/html/rfc7643) and [RFC7644](https://tools.ietf.org/html/rfc7644)).
 
 The following components are implemented:

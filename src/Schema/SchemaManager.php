@@ -11,6 +11,36 @@
 
 namespace Scim\Schema;
 
+use Scim\Resource\ResourceInterface;
+
 class SchemaManager implements SchemaManagerInterface
 {
+    /**
+     * @var \Scim\Schema\SchemaInterface[]
+     */
+    private $schemas = [];
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addSchema(SchemaInterface $schema)
+    {
+        $this->schemas[] = $schema;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSchemas()
+    {
+        return $this->schemas;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isResourceValid(ResourceInterface $resource)
+    {
+
+    }
 }
