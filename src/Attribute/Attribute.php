@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014-2016 Spomky-Labs
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
 namespace Scim\Attribute;
 
 use Assert\Assertion;
@@ -58,7 +67,7 @@ abstract class Attribute implements AttributeInterface
         Assertion::keyExists($data, 'type');
         Assertion::string($data['type']);
 
-        foreach ($data as $k=>$v) {
+        foreach ($data as $k => $v) {
             Assertion::true(property_exists($this, $k), sprintf('The property "%s" does not exist. %s.', $k, json_encode($data)));
             $this->$k = $v;
         }
@@ -87,7 +96,7 @@ abstract class Attribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
-    function jsonSerialize()
+    public function jsonSerialize()
     {
         $keys = $this->getReturnedKeys();
         $result = [];

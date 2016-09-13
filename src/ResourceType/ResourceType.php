@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014-2016 Spomky-Labs
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
 namespace Scim\ResourceType;
 
 use Assert\Assertion;
@@ -34,7 +43,7 @@ class ResourceType extends Resource implements ResourceTypeInterface
     }
 
     /**
-     * As the ResourceType is a read only resource, the set method does nothing
+     * As the ResourceType is a read only resource, the set method does nothing.
      *
      * {@inheritdoc}
      */
@@ -76,7 +85,8 @@ class ResourceType extends Resource implements ResourceTypeInterface
         return $resourceType;
     }
 
-    private function checkSchemaExtension(array $schemaExtensions) {
+    private function checkSchemaExtension(array $schemaExtensions)
+    {
         foreach ($schemaExtensions as $schemaExtension) {
             Assertion::keyExists($schemaExtension, 'schema');
             Assertion::string($schemaExtension['schema']);
@@ -88,7 +98,7 @@ class ResourceType extends Resource implements ResourceTypeInterface
     /**
      * {@inheritdoc}
      */
-    function jsonSerialize()
+    public function jsonSerialize()
     {
         $vars = ['schemas', 'id', 'name', 'endpoint', 'description', 'schema', 'schemaExtensions', 'meta'];
         $results = [];

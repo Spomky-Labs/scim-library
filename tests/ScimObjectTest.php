@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014-2016 Spomky-Labs
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
 namespace Scim\Test;
 
 abstract class ScimObjectTest extends \PHPUnit_Framework_TestCase
@@ -12,10 +21,9 @@ abstract class ScimObjectTest extends \PHPUnit_Framework_TestCase
     protected function checkJsonObjects(array $attribute, array $expected, $current_key = '/')
     {
         $this->assertEquals(count($attribute), count($expected), sprintf('At %s, expected keys "%s". Got "%s".', $current_key, json_encode(array_keys($expected)), json_encode(array_keys($attribute))));
-        foreach ($expected as $k=>$v) {
+        foreach ($expected as $k => $v) {
             $this->assertArrayHasKey($k, $attribute, sprintf('At %s, the key "%s" does not exist.', $current_key, $k));
             if (is_array($v)) {
-
                 $this->checkJsonObjects($attribute[$k], $v, $current_key.$k.'/');
             } else {
                 $this->assertEquals($attribute[$k], $v, sprintf('At %s, expected value for key "%s" is "%s". Got "%s" (full attribute: "%s").', $current_key, $k, $v, $attribute[$k], json_encode($attribute)));
