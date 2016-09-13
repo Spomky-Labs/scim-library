@@ -1,0 +1,34 @@
+language: php
+
+sudo: true
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+  include:
+    - php: 5.6
+    - php: 5.6
+      env: deps=low
+    - php: 7.0
+    - php: 7.0
+      env: deps=low
+    - php: hhvm
+    - php: nightly
+    - php: nightly
+      env: deps=low
+
+before_script:
+  # create logs dir
+  - mkdir -p build/logs
+
+  # prepare composer and dependencies
+  - composer self-update
+  - if [[ $deps = low ]]; then composer update --no-interaction --prefer-lowest; fi
+  - if [[ !$deps ]]; then composer install --no-interaction ; fi
+
+script:
+  - composer test-with-coverage
+
+after_success:
+  - if [ "$TRAVIS_PHP_VERSION" != 'hhvm' ]; then vendor/bin/coveralls --no-interaction; fi
