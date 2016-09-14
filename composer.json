@@ -3,7 +3,7 @@
     "type": "library",
     "description": "OAuth2 Server Library",
     "license": "MIT",
-    "keywords": ["scim", "RFC7643", "library"],
+    "keywords": ["scim", "RFC7642", "RFC7643", "RFC7644", "library"],
     "homepage": "https://github.com/Spomky-Labs/scim-library",
     "authors": [
         {
