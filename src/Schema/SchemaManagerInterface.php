@@ -11,7 +11,7 @@
 
 namespace Scim\Schema;
 
-use Scim\Resource\ResourceInterface;
+use Scim\Resource\ResourceObject;
 
 interface SchemaManagerInterface
 {
@@ -26,12 +26,11 @@ interface SchemaManagerInterface
     public function getSchemas();
 
     /**
-     * This method will verifies the resource is valid.
-     * Internally the method will check all parameters against all schemas declared by the resource.
+     * @param string $input
      *
-     * @param \Scim\Resource\ResourceInterface $resource
+     * @throws \InvalidArgumentException
      *
-     * @return bool
+     * @return \Scim\Schema\SchemaInterface
      */
-    public function isResourceValid(ResourceInterface $resource);
+    public function loadSchemaFromString($input);
 }

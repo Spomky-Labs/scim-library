@@ -9,14 +9,12 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
-class BooleanAttribute extends Attribute
+class BooleanAttributeType extends AttributeType
 {
     /**
-     * BooleanAttribute constructor.
-     *
-     * @param array $data
+     * {@inheritdoc}
      */
     public function __construct(array $data)
     {

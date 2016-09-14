@@ -9,23 +9,16 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
-class DecimalAttribute extends Attribute
+class DateTimeAttributeType extends AttributeType
 {
     /**
-     * @var string
-     */
-    protected $uniqueness = self::UNIQUENESS_NONE;
-
-    /**
-     * DecimalAttribute constructor.
-     *
-     * @param array $data
+     * {@inheritdoc}
      */
     public function __construct(array $data)
     {
-        $data['type'] = self::TYPE_DECIMAL;
+        $data['type'] = self::TYPE_DATETIME;
         parent::__construct($data);
     }
 }

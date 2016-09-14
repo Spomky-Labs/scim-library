@@ -11,14 +11,8 @@
 
 namespace Scim\ResourceType;
 
-use Scim\Resource\ResourceInterface;
+use Scim\Schema\SchemaInterface;
 
-interface ResourceTypeInterface extends ResourceInterface
+interface ResourceTypeInterface extends SchemaInterface
 {
-    /**
-     * @param array $jsonObject
-     *
-     * @return \Scim\ResourceType\ResourceTypeInterface
-     */
-    public static function loadFromArray(array $jsonObject);
 }

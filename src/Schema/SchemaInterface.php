@@ -11,10 +11,22 @@
 
 namespace Scim\Schema;
 
-interface SchemaInterface extends \JsonSerializable
+use Scim\ScimObject\ScimObjectInterface;
+
+interface SchemaInterface extends ScimObjectInterface
 {
     /**
-     * @return \Scim\Attribute\AttributeInterface[]
+     * @return string
      */
-    public function getAttribute();
+    public function getId();
+
+    /**
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * @return null|string
+     */
+    public function getDescription();
 }

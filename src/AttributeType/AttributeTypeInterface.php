@@ -9,9 +9,11 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
-interface AttributeInterface extends \JsonSerializable
+use Scim\ScimObject\ScimObjectInterface;
+
+interface AttributeTypeInterface extends ScimObjectInterface
 {
     const MUTABILITY_READONLY = 'readOnly';
     const MUTABILITY_READWRITE = 'readWrite';
@@ -37,6 +39,13 @@ interface AttributeInterface extends \JsonSerializable
     const TYPE_COMPLEX = 'complex';
 
     /**
+     * AttributeTypeInterface constructor.
+     *
+     * @param array $data
+     */
+    public function __construct(array $data);
+
+    /**
      * @param string $key
      *
      * @return bool
@@ -49,4 +58,40 @@ interface AttributeInterface extends \JsonSerializable
      * @return mixed
      */
     public function get($key);
+
+
+    /**
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * @return string
+     */
+    public function getType();
+
+    /**
+     * @return null|string
+     */
+    public function getDescription();
+
+    /**
+     * @return boolean
+     */
+    public function isMultiValued();
+
+    /**
+     * @return boolean
+     */
+    public function isRequired();
+
+    /**
+     * @return string
+     */
+    public function getMutability();
+
+    /**
+     * @return string
+     */
+    public function getReturned();
 }

@@ -9,28 +9,21 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
-class BinaryAttribute extends Attribute
+class DecimalAttributeType extends AttributeType
 {
-    /**
-     * @var bool
-     */
-    protected $caseExact = false;
-
     /**
      * @var string
      */
     protected $uniqueness = self::UNIQUENESS_NONE;
 
     /**
-     * BinaryAttribute constructor.
-     *
-     * @param array $data
+     * {@inheritdoc}
      */
     public function __construct(array $data)
     {
-        $data['type'] = self::TYPE_BINARY;
+        $data['type'] = self::TYPE_DECIMAL;
         parent::__construct($data);
     }
 }

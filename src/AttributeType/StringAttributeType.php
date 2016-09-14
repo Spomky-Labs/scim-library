@@ -9,11 +9,9 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
-use Assert\Assertion;
-
-class ReferenceAttribute extends Attribute
+class StringAttributeType extends AttributeType
 {
     /**
      * @var bool
@@ -23,7 +21,7 @@ class ReferenceAttribute extends Attribute
     /**
      * @var string[]
      */
-    protected $referenceTypes = [];
+    protected $canonicalValues = [];
 
     /**
      * @var string
@@ -31,18 +29,11 @@ class ReferenceAttribute extends Attribute
     protected $uniqueness = self::UNIQUENESS_NONE;
 
     /**
-     * ReferenceAttribute constructor.
-     *
-     * @param array $data
+     * {@inheritdoc}
      */
     public function __construct(array $data)
     {
-        Assertion::keyExists($data, 'referenceTypes');
-        Assertion::isArray($data['referenceTypes']);
-        Assertion::allString($data['referenceTypes']);
-        Assertion::notEmpty($data['referenceTypes']);
-
-        $data['type'] = self::TYPE_REFERENCE;
+        $data['type'] = self::TYPE_STRING;
         parent::__construct($data);
     }
 }

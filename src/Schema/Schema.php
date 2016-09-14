@@ -12,12 +12,13 @@
 namespace Scim\Schema;
 
 use Assert\Assertion;
-use Scim\Attribute\AttributeInterface;
+use Scim\Attributetype\AttributeTypeInterface;
+use Scim\ScimObject\ScimObject;
 
-class Schema implements SchemaInterface
+class Schema extends ScimObject implements SchemaInterface
 {
     /**
-     * @var \Scim\Attribute\AttributeInterface[]
+     * @var \Scim\Attributetype\AttributeTypeInterface[]
      */
     protected $attributes = [];
 
@@ -39,80 +40,48 @@ class Schema implements SchemaInterface
     /**
      * Resource constructor.
      *
-     * @param string      $id
-     * @param string      $name
-     * @param null|string $description
+     * @param string                                       $id
+     * @param string                                       $name
+     * @param null|string                                  $description
+     * @param \Scim\AttributeType\AttributeTypeInterface[] $attributes
      */
-    public function __construct($id, $name, $description = null)
+    public function __construct($id, $name, array $attributes, $description = null)
     {
         Assertion::string($id);
         Assertion::string($name);
         Assertion::nullOrString($description);
-        $this->id = $id;
-        $this->name = $name;
-        $this->description = $description;
+        Assertion::notEmpty($attributes);
+        Assertion::allIsInstanceOf($attributes, AttributeTypeInterface::class);
+
+        parent::__construct([
+            'id' => $id,
+            'name' => $name,
+            'description' => $description,
+            'attributes' => $attributes,
+        ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function has($key)
+    public function getId()
     {
-        Assertion::string($key);
-
-        return property_exists($this, $key);
+        return $this->id;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function get($key)
+    public function getName()
     {
-        Assertion::true($this->has($key), sprintf('Attribute "%s" does not exist.', $key));
-
-        return $this->$key;
+        return $this->name;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function set($key, $value)
+    public function getDescription()
     {
-        Assertion::true($this->has($key), sprintf('Attribute "%s" does not exist.', $key));
-
-        $this->$key = $value;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAttribute()
-    {
-        return $this->attributes;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function addAttribute(AttributeInterface $attribute)
-    {
-        $this->attributes[] = $attribute;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function jsonSerialize()
-    {
-        $vars = ['id', 'name', 'description', 'attributes'];
-        $results = [];
-        foreach ($vars as $k) {
-            $value = $this->$k;
-            if (is_bool($value) || !empty($value)) {
-                $results[$k] = $this->$k;
-            }
-        }
-
-        return $results;
+        return $this->description;
     }
 }

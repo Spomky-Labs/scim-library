@@ -9,23 +9,26 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
-class IntegerAttribute extends Attribute
+class BinaryAttributeType extends AttributeType
 {
+    /**
+     * @var bool
+     */
+    protected $caseExact = false;
+
     /**
      * @var string
      */
     protected $uniqueness = self::UNIQUENESS_NONE;
 
     /**
-     * IntegerAttribute constructor.
-     *
-     * @param array $data
+     * {@inheritdoc}
      */
     public function __construct(array $data)
     {
-        $data['type'] = self::TYPE_INTEGER;
+        $data['type'] = self::TYPE_BINARY;
         parent::__construct($data);
     }
 }

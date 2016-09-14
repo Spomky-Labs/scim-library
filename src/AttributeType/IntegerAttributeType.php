@@ -9,33 +9,21 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
-class StringAttribute extends Attribute
+class IntegerAttributeType extends AttributeType
 {
-    /**
-     * @var bool
-     */
-    protected $caseExact = false;
-
-    /**
-     * @var string[]
-     */
-    protected $canonicalValues = [];
-
     /**
      * @var string
      */
     protected $uniqueness = self::UNIQUENESS_NONE;
 
     /**
-     * StringAttribute constructor.
-     *
-     * @param array $data
+     * {@inheritdoc}
      */
     public function __construct(array $data)
     {
-        $data['type'] = self::TYPE_STRING;
+        $data['type'] = self::TYPE_INTEGER;
         parent::__construct($data);
     }
 }

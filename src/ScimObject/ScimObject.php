@@ -9,64 +9,19 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\ScimObject;
 
 use Assert\Assertion;
 
-abstract class Attribute implements AttributeInterface
+abstract class ScimObject implements ScimObjectInterface
 {
     /**
-     * @var string
-     */
-    protected $name;
-
-    /**
-     * @var string
-     */
-    protected $type;
-
-    /**
-     * @var string|null
-     */
-    protected $description;
-
-    /**
-     * @var bool
-     */
-    protected $multiValued = false;
-
-    /**
-     * @var bool
-     */
-    protected $required = false;
-
-    /**
-     * @var string[]
-     */
-    protected $canonicalValues = [];
-
-    /**
-     * @var string
-     */
-    protected $mutability = self::MUTABILITY_READWRITE;
-
-    /**
-     * @var string
-     */
-    protected $returned = self::RETURNED_DEFAULT;
-
-    /**
-     * Attribute constructor.
+     * ScimObject constructor.
      *
      * @param array $data
      */
     public function __construct(array $data)
     {
-        Assertion::keyExists($data, 'name');
-        Assertion::string($data['name']);
-        Assertion::keyExists($data, 'type');
-        Assertion::string($data['type']);
-
         foreach ($data as $k => $v) {
             Assertion::true(property_exists($this, $k), sprintf('The property "%s" does not exist. %s.', $k, json_encode($data)));
             $this->$k = $v;

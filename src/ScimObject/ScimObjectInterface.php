@@ -9,9 +9,9 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Resource;
+namespace Scim\ScimObject;
 
-interface ResourceInterface extends \JsonSerializable
+interface ScimObjectInterface extends \JsonSerializable
 {
     /**
      * @param string $key
@@ -26,10 +26,4 @@ interface ResourceInterface extends \JsonSerializable
      * @return mixed
      */
     public function get($key);
-
-    /**
-     * @param string $key
-     * @param mixed  $value
-     */
-    public function set($key, $value);
 }

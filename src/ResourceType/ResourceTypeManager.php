@@ -9,17 +9,17 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Schema;
+namespace Scim\ResourceType;
 
 use Assert\Assertion;
 use Scim\AttributeType\AttributeTypeManagerInterface;
 
-class SchemaManager implements SchemaManagerInterface
+class ResourceTypeManager implements ResourceTypeManagerInterface
 {
     /**
-     * @var \Scim\Schema\SchemaInterface[]
+     * @var \Scim\ResourceType\ResourceTypeInterface[]
      */
-    private $schemas = [];
+    private $resource_types = [];
 
     /**
      * @var \Scim\AttributeType\AttributeTypeManagerInterface
@@ -27,7 +27,7 @@ class SchemaManager implements SchemaManagerInterface
     private $attributeTypeManager;
 
     /**
-     * SchemaManager constructor.
+     * ResourceTypeManager constructor.
      *
      * @param \Scim\AttributeType\AttributeTypeManagerInterface $attributeTypeManager
      */
@@ -39,23 +39,23 @@ class SchemaManager implements SchemaManagerInterface
     /**
      * {@inheritdoc}
      */
-    public function addSchema(SchemaInterface $schema)
+    public function addResourceType(ResourceTypeInterface $resource_type)
     {
-        $this->schemas[$schema->getId()] = $schema;
+        $this->resource_types[$resource_type->getId()] = $resource_type;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getSchemas()
+    public function getResourceTypes()
     {
-        return $this->schemas;
+        return $this->resource_types;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function loadSchemaFromString($input)
+    public function loadResourceTypeFromString($input)
     {
         Assertion::string($input);
         $json = json_decode($input, true);
@@ -70,13 +70,15 @@ class SchemaManager implements SchemaManagerInterface
         foreach ($json['attributes'] as $attribute) {
             $attributes[] = $this->attributeTypeManager->createAttributeTypeFromData($attribute);
         }
-        $schema = new Schema(
+
+        $resource_type = new ResourceType(
             $json['id'],
             $json['name'],
             $attributes,
-            array_key_exists('description', $json) ? $json['description'] : null
+            array_key_exists('description', $json) ? $json['description'] : null,
+            array_key_exists('meta', $json) ? $json['meta'] : null
         );
 
-        return $schema;
+        return $resource_type;
     }
 }

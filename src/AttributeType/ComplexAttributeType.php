@@ -9,32 +9,30 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Scim\Attribute;
+namespace Scim\AttributeType;
 
 use Assert\Assertion;
 
-class ComplexAttribute extends Attribute
+class ComplexAttributeType extends AttributeType
 {
     /**
-     * @var \Scim\Attribute\AttributeInterface[]
+     * @var \Scim\AttributeType\AttributeTypeInterface[]
      */
     protected $subAttributes = [];
 
     /**
-     * ComplexAttribute constructor.
-     *
-     * @param array $data
+     * {@inheritdoc}
      */
     public function __construct(array $data)
     {
         Assertion::keyExists($data, 'subAttributes');
         Assertion::isArray($data['subAttributes']);
-        Assertion::allIsInstanceOf($data['subAttributes'], AttributeInterface::class);
+        Assertion::allIsInstanceOf($data['subAttributes'], AttributeTypeInterface::class);
         Assertion::notEmpty($data['subAttributes']);
 
-        // To be clarified. See http://stackoverflow.com/questions/39475320/complex-attribute-that-holds-another-complex-attribute
-        /*foreach ($data['subAttributes'] as $attribute) {
-            Assertion::notEq($attribute->getType(), self::TYPE_COMPLEX);
+        // To be clarified. See http://stackoverflow.com/questions/39475320/complex-AttributeType-that-holds-another-complex-AttributeType
+        /*foreach ($data['subAttributes'] as $AttributeType) {
+            Assertion::notEq($AttributeType->getType(), self::TYPE_COMPLEX);
         }*/
         $data['type'] = self::TYPE_COMPLEX;
         parent::__construct($data);
