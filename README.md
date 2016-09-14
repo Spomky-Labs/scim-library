@@ -19,9 +19,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/Spomky-Labs/scim-library/v/unstable.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
 [![License](https://poser.pugx.org/Spomky-Labs/scim-library/license.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
 
-> *Note 1: this library is still in development. The first stable release will be tagged as `v1.0.x`. All tags `v0.x.y` must be considered as unstable.*
-> 
-> *Note 2: if you use Symfony, [a bundle is in development](https://github.com/Spomky-Labs/OAuth2ServerBundle).*
+> *Note: this library is still in development. The first stable release will be tagged as `v1.0.x`. All tags `v0.x.y` must be considered as unstable.*
 
 This project aims to provide components to build an Identity Manager based on the SCIM specifications ([RFC7643](https://tools.ietf.org/html/rfc7643) and [RFC7644](https://tools.ietf.org/html/rfc7644)).
 
