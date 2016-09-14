@@ -2,6 +2,8 @@
 
 [![Join the chat at https://gitter.im/Spomky-Labs/scim-library](https://badges.gitter.im/Spomky-Labs/scim-library.svg)](https://gitter.im/Spomky-Labs/scim-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[![Join the chat at https://gitter.im/Spomky-Labs/scim-library](https://badges.gitter.im/Spomky-Labs/scim-library.svg)](https://gitter.im/Spomky-Labs/scim-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Spomky-Labs/scim-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Spomky-Labs/scim-library/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/Spomky-Labs/scim-library/badge.svg?branch=master)](https://coveralls.io/github/Spomky-Labs/scim-library?branch=master)
 [![PSR-7 ready](https://img.shields.io/badge/PSR--7-ready-brightgreen.svg)](http://www.php-fig.org/psr/psr-7/)
