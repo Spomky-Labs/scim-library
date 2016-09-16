@@ -25,6 +25,15 @@ interface AttributeTypeManagerInterface
     public function getSupportedAttributeTypeTypes();
 
     /**
+     * @param string $data
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return \Scim\AttributeType\AttributeTypeInterface
+     */
+    public function createAttributeTypeFromJsonString($data);
+
+    /**
      * @param array $data
      *
      * @throws \InvalidArgumentException

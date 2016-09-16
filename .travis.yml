@@ -28,7 +28,8 @@ before_script:
   - if [[ !$deps ]]; then composer install --no-interaction ; fi
 
 script:
-  - composer test-with-coverage
+  - composer phpunit-with-coverage
+  - composer kahlan-with-coverage
 
 after_success:
   - if [ "$TRAVIS_PHP_VERSION" != 'hhvm' ]; then vendor/bin/coveralls --no-interaction; fi

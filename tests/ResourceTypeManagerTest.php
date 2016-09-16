@@ -14,6 +14,9 @@ namespace Scim\Test;
 use Scim\AttributeType\AttributeTypeManager;
 use Scim\ResourceType\ResourceTypeManager;
 
+/**
+ * @group ResourceType
+ */
 class ResourceTypeManagerTest extends ScimObjectTest
 {
     /**

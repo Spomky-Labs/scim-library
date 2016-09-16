@@ -19,7 +19,7 @@ class ResourceTypeManager implements ResourceTypeManagerInterface
     /**
      * @var \Scim\ResourceType\ResourceTypeInterface[]
      */
-    private $resource_types = [];
+    private $resourceTypes = [];
 
     /**
      * @var \Scim\AttributeType\AttributeTypeManagerInterface
@@ -41,7 +41,7 @@ class ResourceTypeManager implements ResourceTypeManagerInterface
      */
     public function addResourceType(ResourceTypeInterface $resource_type)
     {
-        $this->resource_types[$resource_type->getId()] = $resource_type;
+        $this->resourceTypes[$resource_type->getId()] = $resource_type;
     }
 
     /**
@@ -49,7 +49,27 @@ class ResourceTypeManager implements ResourceTypeManagerInterface
      */
     public function getResourceTypes()
     {
-        return $this->resource_types;
+        return $this->resourceTypes;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasResourceType($resourceType)
+    {
+        Assertion::string($resourceType);
+
+        return array_key_exists($resourceType, $this->resourceTypes);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourceType($resourceType)
+    {
+        Assertion::true($this->hasResourceType($resourceType));
+
+        return $this->resourceTypes[$resourceType];
     }
 
     /**

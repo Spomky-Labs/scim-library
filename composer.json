@@ -23,7 +23,8 @@
     "require-dev": {
         "phpunit/phpunit": "^5.0",
         "symfony/var-dumper": "^2.8|^3.0",
-        "satooshi/php-coveralls": "^1.0"
+        "satooshi/php-coveralls": "^1.0",
+        "crysalead/kahlan": "^2.5"
     },
     "autoload": {
         "psr-4": {
@@ -36,8 +37,10 @@
         }
     },
     "scripts":{
-        "test": "phpunit",
-        "test-with-coverage": "phpunit --coverage-clover build/logs/clover.xml"
+        "phpunit": "phpunit",
+        "phpunit-with-coverage": "phpunit --coverage-clover build/logs/clover.xml",
+        "kahlan": "kahlan",
+        "kahlan-with-coverage": "kahlan --coverage=4"
     },
     "extra": {
         "branch-alias": {

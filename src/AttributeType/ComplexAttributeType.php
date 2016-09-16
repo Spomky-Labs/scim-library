@@ -37,4 +37,54 @@ class ComplexAttributeType extends AttributeType
         $data['type'] = self::TYPE_COMPLEX;
         parent::__construct($data);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValueValid($value)
+    {
+        Assertion::isArray($value);
+
+        foreach ($value as $k=>$v) {
+            if ($this->hasSubAttribute($k)) {
+                $subAttribute = $this->getSubAttribute($k);
+                if (false === $subAttribute->isValueValid($v)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @param string $key
+     *
+     * @return bool
+     */
+    private function hasSubAttribute($key)
+    {
+        foreach ($this->subAttributes as $subAttribute) {
+            if ($key === $subAttribute->getName()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @param string $key
+     *
+     * @return \Scim\AttributeType\AttributeTypeInterface
+     */
+    private function getSubAttribute($key)
+    {
+        Assertion::true($this->hasSubAttribute($key));
+        foreach ($this->subAttributes as $subAttribute) {
+            if ($key === $subAttribute->getName()) {
+                return $subAttribute;
+            }
+        }
+    }
 }

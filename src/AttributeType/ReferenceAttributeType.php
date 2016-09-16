@@ -43,4 +43,12 @@ class ReferenceAttributeType extends AttributeType
         $data['type'] = self::TYPE_REFERENCE;
         parent::__construct($data);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValueValid($value)
+    {
+        return is_string($value);
+    }
 }

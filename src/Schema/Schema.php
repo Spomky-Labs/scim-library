@@ -84,4 +84,40 @@ class Schema extends ScimObject implements SchemaInterface
     {
         return $this->description;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAttributeTypes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasAttributeType($attributeType)
+    {
+        foreach ($this->getAttributeTypes() as $type) {
+            if ($attributeType === $type->getName()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAttributeType($attributeType)
+    {
+        foreach ($this->getAttributeTypes() as $type) {
+            if ($attributeType === $type->getName()) {
+                return $type;
+            }
+        }
+
+        throw new \InvalidArgumentException(sprintf('Th attribute type "%s" is not supported by this schema.', $attributeType));
+    }
 }

@@ -14,6 +14,9 @@ namespace Scim\Test;
 use Scim\AttributeType;
 use Scim\AttributeType\AttributeTypeInterface;
 
+/**
+ * @group AttributeType
+ */
 class AttributeTypeTest extends ScimObjectTest
 {
     /**

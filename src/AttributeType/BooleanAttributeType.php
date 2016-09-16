@@ -21,4 +21,12 @@ class BooleanAttributeType extends AttributeType
         $data['type'] = self::TYPE_BOOLEAN;
         parent::__construct($data);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValueValid($value)
+    {
+        return is_bool($value);
+    }
 }

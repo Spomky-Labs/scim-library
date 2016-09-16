@@ -11,6 +11,8 @@
 
 namespace Scim\AttributeType;
 
+use Assert\Assertion;
+
 class BinaryAttributeType extends AttributeType
 {
     /**
@@ -30,5 +32,13 @@ class BinaryAttributeType extends AttributeType
     {
         $data['type'] = self::TYPE_BINARY;
         parent::__construct($data);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValueValid($value)
+    {
+        return is_string($value);
     }
 }

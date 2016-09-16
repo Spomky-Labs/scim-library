@@ -53,6 +53,17 @@ final class AttributeTypeManager implements AttributeTypeManagerInterface
     /**
      * {@inheritdoc}
      */
+    public function createAttributeTypeFromJsonString($data)
+    {
+        $input = json_decode($data, true);
+        Assertion::isArray($input);
+
+        return $this->createAttributeTypeFromData($input);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function createAttributeTypeFromData(array $data)
     {
         Assertion::keyExists($data, 'type');

@@ -26,4 +26,12 @@ class IntegerAttributeType extends AttributeType
         $data['type'] = self::TYPE_INTEGER;
         parent::__construct($data);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValueValid($value)
+    {
+        return is_int($value) && !is_string($value);
+    }
 }

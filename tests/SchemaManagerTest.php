@@ -14,6 +14,9 @@ namespace Scim\Test;
 use Scim\AttributeType\AttributeTypeManager;
 use Scim\Schema\SchemaManager;
 
+/**
+ * @group Schema
+ */
 class SchemaManagerTest extends ScimObjectTest
 {
     /**

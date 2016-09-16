@@ -26,4 +26,12 @@ class DecimalAttributeType extends AttributeType
         $data['type'] = self::TYPE_DECIMAL;
         parent::__construct($data);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValueValid($value)
+    {
+        return is_numeric($value) && !is_string($value);
+    }
 }

@@ -24,6 +24,22 @@ interface ResourceTypeManagerInterface
     public function getResourceTypes();
 
     /**
+     * @param string $resourceType
+     *
+     * @return bool
+     */
+    public function hasResourceType($resourceType);
+
+    /**
+     * @param string $resourceType
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return \Scim\ResourceType\ResourceTypeInterface
+     */
+    public function getResourceType($resourceType);
+
+    /**
      * @param string $input
      *
      * @throws \InvalidArgumentException

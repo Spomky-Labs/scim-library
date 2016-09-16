@@ -45,20 +45,6 @@ interface AttributeTypeInterface extends ScimObjectInterface
      */
     public function __construct(array $data);
 
-    /**
-     * @param string $key
-     *
-     * @return bool
-     */
-    public function has($key);
-
-    /**
-     * @param string $key
-     *
-     * @return mixed
-     */
-    public function get($key);
-
 
     /**
      * @return string
@@ -94,4 +80,11 @@ interface AttributeTypeInterface extends ScimObjectInterface
      * @return string
      */
     public function getReturned();
+
+    /**
+     * @param mixed $value
+     *
+     * @return bool
+     */
+    public function isValueValid($value);
 }

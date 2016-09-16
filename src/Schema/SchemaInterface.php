@@ -29,4 +29,23 @@ interface SchemaInterface extends ScimObjectInterface
      * @return null|string
      */
     public function getDescription();
+
+    /**
+     * @return \Scim\AttributeType\AttributeTypeInterface[]
+     */
+    public function getAttributeTypes();
+
+    /**
+     * @param string $attributeType
+     *
+     * @return bool
+     */
+    public function hasAttributeType($attributeType);
+
+    /**
+     * @param string $attributeType
+     *
+     * @return \Scim\AttributeType\AttributeTypeInterface
+     */
+    public function getAttributeType($attributeType);
 }

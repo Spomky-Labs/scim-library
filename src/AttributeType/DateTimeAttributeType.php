@@ -21,4 +21,12 @@ class DateTimeAttributeType extends AttributeType
         $data['type'] = self::TYPE_DATETIME;
         parent::__construct($data);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValueValid($value)
+    {
+        //return is_string($value);
+    }
 }
