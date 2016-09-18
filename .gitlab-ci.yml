@@ -1,0 +1,16 @@
+image: spomky/gitlab-ci:70
+
+before_script:
+    - mkdir -p build/logs
+    - composer install --no-interaction
+
+test:php70:
+    script:
+        - php composer.phar test
+        - vendor/bin/coveralls --no-interaction
+
+test:php56:
+    image: spomky/gitlab-ci:56
+    script:
+        - php composer.phar test
+        - vendor/bin/coveralls --no-interaction
