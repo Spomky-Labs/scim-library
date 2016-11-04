@@ -11,8 +11,6 @@
 
 namespace Scim\AttributeType;
 
-use Assert\Assertion;
-
 class BinaryAttributeType extends AttributeType
 {
     /**

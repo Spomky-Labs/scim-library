@@ -18,7 +18,7 @@ class ResourceObject implements ResourceObjectInterface
     /**
      * @var \Scim\Attribute\AttributeInterface[]
      */
-    private $data= [];
+    private $data = [];
 
     /**
      * ResourceObject constructor.

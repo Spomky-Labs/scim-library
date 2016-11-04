@@ -54,10 +54,10 @@ class Schema extends ScimObject implements SchemaInterface
         Assertion::allIsInstanceOf($attributes, AttributeTypeInterface::class);
 
         parent::__construct([
-            'id' => $id,
-            'name' => $name,
+            'id'          => $id,
+            'name'        => $name,
             'description' => $description,
-            'attributes' => $attributes,
+            'attributes'  => $attributes,
         ]);
     }
 

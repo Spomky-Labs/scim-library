@@ -24,6 +24,7 @@ class UserResourceTest extends ScimObjectTest
     public function test1()
     {
     }
+
     /**
      * @dataProvider dataUserCreation
      *
