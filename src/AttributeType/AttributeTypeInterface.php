@@ -45,7 +45,6 @@ interface AttributeTypeInterface extends ScimObjectInterface
      */
     public function __construct(array $data);
 
-
     /**
      * @return string
      */
@@ -62,12 +61,12 @@ interface AttributeTypeInterface extends ScimObjectInterface
     public function getDescription();
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isMultiValued();
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isRequired();
 

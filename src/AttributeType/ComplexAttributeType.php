@@ -45,7 +45,7 @@ class ComplexAttributeType extends AttributeType
     {
         Assertion::isArray($value);
 
-        foreach ($value as $k=>$v) {
+        foreach ($value as $k => $v) {
             if ($this->hasSubAttribute($k)) {
                 $subAttribute = $this->getSubAttribute($k);
                 if (false === $subAttribute->isValueValid($v)) {

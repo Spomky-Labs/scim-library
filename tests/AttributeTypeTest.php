@@ -23,7 +23,7 @@ class AttributeTypeTest extends ScimObjectTest
      * @dataProvider dataAttributeTypeCreation
      *
      * @param \Scim\AttributeType\AttributeTypeInterface $attribute
-     * @param string                             $expected_json
+     * @param string                                     $expected_json
      */
     public function testAttributeTypeCreation(AttributeTypeInterface $attribute, $expected_json)
     {

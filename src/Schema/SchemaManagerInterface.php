@@ -11,8 +11,6 @@
 
 namespace Scim\Schema;
 
-use Scim\Resource\ResourceObject;
-
 interface SchemaManagerInterface
 {
     /**

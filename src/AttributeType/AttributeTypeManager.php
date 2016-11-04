@@ -25,7 +25,7 @@ final class AttributeTypeManager implements AttributeTypeManagerInterface
      */
     public function __construct()
     {
-        foreach ($this->getAttributeTypeMap() as $k=>$v) {
+        foreach ($this->getAttributeTypeMap() as $k => $v) {
             $this->AttributeTypes[$k] = $v;
         }
     }

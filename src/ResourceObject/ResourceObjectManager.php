@@ -66,14 +66,14 @@ class ResourceObjectManager
 
     /**
      * @param \Scim\ResourceType\ResourceTypeInterface[] $schemas
-     * @param array $data
+     * @param array                                      $data
      *
      * @return \Scim\Attribute\AttributeInterface[]
      */
     private function createAttribute(array $schemas, array $data)
     {
         $result = [];
-        foreach ($data as $k=>$v) {
+        foreach ($data as $k => $v) {
             foreach ($schemas as $schema) {
                 if ($schema->hasAttributeType($k)) {
                     $result[$k] = new Attribute($v, $schema->getAttributeType($k));
