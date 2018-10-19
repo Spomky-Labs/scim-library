@@ -17,7 +17,7 @@
 [![Latest Stable Version](https://poser.pugx.org/Spomky-Labs/scim-library/v/stable.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
 [![Total Downloads](https://poser.pugx.org/Spomky-Labs/scim-library/downloads.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
 [![Latest Unstable Version](https://poser.pugx.org/Spomky-Labs/scim-library/v/unstable.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
-[![License](https://poser.pugx.org/Spomky-Labs/scim-library/license.png)](https://packagist.org/packages/Spomky-Labs/scim-library)
+[![License](https://poser.pugx.org/Spomky-Labs/scim-library/license.png)](https://packagist.org/packages/Spomky-Labs/scim-library) [![GuardRails badge](https://badges.production.guardrails.io/Spomky-Labs/scim-library.svg)](https://www.guardrails.io)
 
 > *Note: this library is still in development. The first stable release will be tagged as `v1.0.x`. All tags `v0.x.y` must be considered as unstable.*
 
